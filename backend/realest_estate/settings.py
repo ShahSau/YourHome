@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts',
     'realtors',
-    'listings'
+    'listings',
+    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +89,13 @@ DATABASES = {
         'HOST': 'localhost'
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shahriar.saurov@integrify.io'
+EMAIL_HOST_PASSWORD = 'pvhizfajbypyszdg'
+EMAIL_USE_TLS = True
 
 
 # Password validation
