@@ -8,11 +8,14 @@ import ListingDetail from './containers/ListingDetail';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
 import NotFound from './components/NotFound';
-import Layout from './hocs/Layout';
+// import Layout from './hocs/Layout';
 
+import { Provider } from 'react-redux';
+import store from './store';
 
 
 const App = () => (
+    <Provider store={store}>
         <Router>
             {/* <Layout> */}
                 <Switch>
@@ -27,6 +30,7 @@ const App = () => (
                 </Switch>
             {/* </Layout> */}
         </Router>
+    </Provider>
 );
 
 export default App;
