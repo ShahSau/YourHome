@@ -8,7 +8,7 @@ import ListingDetail from './containers/ListingDetail';
 import Login from './containers/Login';
 import SignUp from './containers/SignUp';
 import NotFound from './components/NotFound';
-// import Layout from './hocs/Layout';
+import Layout from './hocs/Layout';
 
 import { Provider } from 'react-redux';
 import store from './store';
@@ -17,7 +17,7 @@ import './sass/main.scss';
 const App = () => (
     <Provider store={store}>
         <Router>
-            {/* <Layout> */}
+            <Layout> 
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route exact path='/about' component={About} />
@@ -28,7 +28,7 @@ const App = () => (
                     <Route exact path='/signup' component={SignUp} />
                     <Route component={NotFound} />
                 </Switch>
-            {/* </Layout> */}
+            </Layout> 
         </Router>
     </Provider>
 );
