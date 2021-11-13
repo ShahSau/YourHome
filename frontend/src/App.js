@@ -12,7 +12,7 @@ import NotFound from './components/NotFound';
 
 import { Provider } from 'react-redux';
 import store from './store';
-
+import './sass/main.scss';
 
 const App = () => (
     <Provider store={store}>
