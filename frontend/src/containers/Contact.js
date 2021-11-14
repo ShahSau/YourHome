@@ -34,7 +34,7 @@ const Contact = ({ setAlert }) => {
         };
 
         setLoading(true);
-        axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/`, { name, email, subject, message }, config)
+        axios.post('http://localhost:8000//api/contacts/', { name, email, subject, message }, config)
         .then(res => {
             setAlert('Message Sent', 'success');
             setLoading(false);
@@ -56,8 +56,10 @@ const Contact = ({ setAlert }) => {
                     content='Contact us'
                 />
             </Helmet>
+            <h1 className='contact__h1'>Let's find your dream house</h1>
             <form className='contact__form' onSubmit={e => onSubmit(e)}>
-                <label className='contact__form__label' htmlFor='name'>Name*</label>
+                <div className='contact__form__div1'> 
+                <label className='contact__form__label' htmlFor='name'>Your Name:</label>
                 <input 
                     className='contact__form__input' 
                     name='name' 
@@ -67,7 +69,9 @@ const Contact = ({ setAlert }) => {
                     value={name} 
                     required 
                 />
-                <label className='contact__form__label' htmlFor='email'>Email*</label>
+                </div>
+                <div className='contact__form__div1'>   
+                <label className='contact__form__label' htmlFor='email'>Your Email:</label>
                 <input 
                     className='contact__form__input' 
                     name='email' 
@@ -77,17 +81,56 @@ const Contact = ({ setAlert }) => {
                     value={email} 
                     required 
                 />
-                <label className='contact__form__label' htmlFor='subject'>Subject*</label>
+                </div>
+                <div className='contact__form__div1'> 
+                <label className='contact__form__label' htmlFor='subject'>Your Phone:</label> 
                 <input 
                     className='contact__form__input' 
-                    name='subject' 
+                    name='phone' 
                     type='text' 
-                    placeholder='Buying Home' 
+                    placeholder='123456' 
+                    onChange={e => onChange(e)} 
+                    value={subject} 
+                />
+                 </div>
+                <div className='contact__form__div1'> 
+                <label className='contact__form__label' htmlFor='name'>City:</label>
+                <input 
+                    className='contact__form__input' 
+                    name='city' 
+                    type='text' 
+                    placeholder='Name of the city' 
+                    onChange={e => onChange(e)} 
+                    value={name} 
+                    required 
+                />
+               </div>
+               <div className='contact__form__div1'> 
+                <label className='contact__form__label' htmlFor='subject'>Rent/Buy:</label>
+                <input 
+                    className='contact__form__input' 
+                    name='property' 
+                    type='text' 
+                    placeholder='I am looking to buy/rent' 
                     onChange={e => onChange(e)} 
                     value={subject} 
                     required 
                 />
-                <label className='contact__form__label' htmlFor='message'>Message</label>
+                </div>
+                <div className='contact__form__div1'> 
+                 <label className='contact__form__label' htmlFor='email'>Subject:</label>
+                 <input 
+                    className='contact__form__input' 
+                    name='subject' 
+                    type='text' 
+                    placeholder='example@gmail.com' 
+                    onChange={e => onChange(e)} 
+                    value={email} 
+                    required 
+                />
+                </div>
+                <div className='contact__form__div1'> 
+                <label className='contact__form__label' htmlFor='message'>Message:</label>
                 <textarea 
                     className='contact__form__textarea'
                     name='message'
@@ -97,6 +140,7 @@ const Contact = ({ setAlert }) => {
                     onChange={e => onChange(e)} 
                     value={message} 
                 />
+                </div>
                 {loading ?
                     <div className='contact__form__loader'>
                         <Loader
@@ -106,9 +150,12 @@ const Contact = ({ setAlert }) => {
                             width={50}
                         />
                     </div> :
-                    <button className='contact__form__button' htmltype='submit'>Send</button>
+                    <button className='contact__form__button' htmltype='submit'>Send:</button>
                 }
+                <div>
+                </div>
             </form>
+            {/* <Navbar /> */}
         </div>
     );
 };
