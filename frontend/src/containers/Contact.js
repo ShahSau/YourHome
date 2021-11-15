@@ -14,11 +14,14 @@ const Contact = ({ setAlert }) => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        phone:'',
         subject: '',
+        city:'',
+        property:'',
         message: ''
     });
 
-    const { name, email, subject, message } = formData;
+    const { name, email, subject, message, phone, city, property } = formData;
 
     const [loading, setLoading] = useState(false);
 
@@ -34,7 +37,7 @@ const Contact = ({ setAlert }) => {
         };
 
         setLoading(true);
-        axios.post('http://localhost:8000//api/contacts/', { name, email, subject, message }, config)
+        axios.post('http://localhost:8000//api/contacts/', { name, email, subject, message, phone,property, city }, config)
         .then(res => {
             setAlert('Message Sent', 'success');
             setLoading(false);
@@ -83,49 +86,49 @@ const Contact = ({ setAlert }) => {
                 />
                 </div>
                 <div className='contact__form__div1'> 
-                <label className='contact__form__label' htmlFor='subject'>Your Phone:</label> 
+                <label className='contact__form__label' htmlFor='phone'>Your Phone:</label> 
                 <input 
                     className='contact__form__input' 
                     name='phone' 
                     type='text' 
                     placeholder='123456' 
                     onChange={e => onChange(e)} 
-                    value={subject} 
+                    value={phone} 
                 />
                  </div>
                 <div className='contact__form__div1'> 
-                <label className='contact__form__label' htmlFor='name'>City:</label>
+                <label className='contact__form__label' htmlFor='city'>City:</label>
                 <input 
                     className='contact__form__input' 
                     name='city' 
                     type='text' 
                     placeholder='Name of the city' 
                     onChange={e => onChange(e)} 
-                    value={name} 
+                    value={city} 
                     required 
                 />
                </div>
                <div className='contact__form__div1'> 
-                <label className='contact__form__label' htmlFor='subject'>Rent/Buy:</label>
+                <label className='contact__form__label' htmlFor='property'>Rent/Buy:</label>
                 <input 
                     className='contact__form__input' 
                     name='property' 
                     type='text' 
                     placeholder='I am looking to buy/rent' 
                     onChange={e => onChange(e)} 
-                    value={subject} 
+                    value={property} 
                     required 
                 />
                 </div>
                 <div className='contact__form__div1'> 
-                 <label className='contact__form__label' htmlFor='email'>Subject:</label>
+                 <label className='contact__form__label' htmlFor='subject'>Subject:</label>
                  <input 
                     className='contact__form__input' 
                     name='subject' 
                     type='text' 
                     placeholder='example@gmail.com' 
                     onChange={e => onChange(e)} 
-                    value={email} 
+                    value={subject} 
                     required 
                 />
                 </div>
@@ -150,7 +153,7 @@ const Contact = ({ setAlert }) => {
                             width={50}
                         />
                     </div> :
-                    <button className='contact__form__button' htmltype='submit'>Send:</button>
+                    <button className='contact__form__button' htmltype='submit'>Send</button>
                 }
                 <div>
                 </div>

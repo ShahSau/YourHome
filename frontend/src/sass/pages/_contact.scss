@@ -63,9 +63,10 @@
             font-size: 1.6rem;
             outline-color:  rgba(59,130,246,0.5);
             caret-color: $color-primary;
-            color: #4D4D4D;
+            color: #EFEFEF;
             border: none;
-            background-color: $color-grey-light;
+            // background-color: #EFEFEF;
+            background-color: #4D4D4D;
             border-radius: 0.4rem;
             box-shadow: 0 0.3rem 0.2rem rgba(0,0,0,0.1);
             @include respond(phone) {
@@ -79,10 +80,11 @@
             padding: 1.5rem;
             width: 67%;
             font-size: 1.6rem;
-            outline-color: $color-primary;
+            outline-color: rgba(59,130,246,0.5);
             caret-color: $color-primary;
             border: none;
-            background-color: $color-grey-light;
+            // background-color: $color-grey-light;
+            background-color: #4D4D4D;
             border-radius: 0.4rem;
             box-shadow: 0 0.3rem 0.2rem rgba(0,0,0,0.1);
             box-sizing: border-box;
