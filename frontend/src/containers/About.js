@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import House from '../assets/images/house.jpeg'
+import MailchimpFormContainer from '../components/MailChimpFormContainer';
 
 const About = () => {
     const [topSeller, setTopSeller] = useState([]);
@@ -150,6 +151,7 @@ const About = () => {
                     <h2 className='about__subheading'>Meet out awesome team!</h2>
                 </div>
                 {getAllRealtors()}
+                <MailchimpFormContainer />
             </section>
         </main>
     );
